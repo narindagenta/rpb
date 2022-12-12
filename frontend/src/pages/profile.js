@@ -7,7 +7,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
-import { About } from '.';
+import { profile } from '.';
 
  
 // Abaikan kode di bawah ini
