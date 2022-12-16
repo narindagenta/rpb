@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Fira+Mono:wght@500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Fira+Mono:wght@500&display=swap');
 body{
     background: url(./img/bg-home.jpeg)  0 0 no-repeat fixed;
     height: 95vh;
@@ -6,12 +6,12 @@ body{
     color: black;
     font-family: 'Fira Mono', monospace;
       /* Full height */
-    height: 100%;
+    /* height: 100%; */
 
   /* Center and scale the image nicely */
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat;
     background-size: cover;
-}
+} */ 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
 *{
@@ -19,8 +19,29 @@ body{
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  transition: 0.5s ease;
+  /* background-color: #9ED0E0; */
 }
 
+.product-page{
+  /* background: rgba(27, 134, 238, 1); */
+}
+
+header{
+  top :0px;
+  z-index: 999;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin : 0p;
+  align-items: center;
+  padding: 15px 200px;
+  transition: 0.5s ease;
+  background: rgba(27, 134, 238, 1);
+  /* border-bottom: 4px solid #333333; */
+  box-shadow: 0 2px 4px 0 black;
+}
 
 header .brand{
   color: #000;
@@ -70,7 +91,10 @@ section{
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background: #2696E9;
+  background-image: url('./img/bg.png');
+  background-size: 100% auto;
+  background-position-y: 4rem;
+  background-position-x: 8rem;
 }
 
 .home:before{
@@ -104,7 +128,7 @@ section{
   text-transform: uppercase;
   letter-spacing: 5px;
   line-height: 75px;
-  margin-bottom: 40px;
+  /* margin-bottom: 20px; */
 }
 
 .home .content h1 span{
@@ -216,6 +240,7 @@ section{
     right: 15px;
   }
 
+
   header .navigation{
     display: none;
   }
@@ -257,6 +282,7 @@ section{
   }
 
   .menu-btn{
+    background: url();
     background-size: 30px;
     background-position: center;
     width: 40px;
@@ -268,6 +294,7 @@ section{
 
   .menu-btn.active{
     z-index: 999;
+    background: url(close.png);
     background-size: 25px;
     background-position: center;
     transition: 0.3s ease;
@@ -281,10 +308,7 @@ section{
   }
 }
 
-h1{
-    font-size: 2.5rem;
-    font-family: 'Permanent Marker', cursive;
-}
+/*404 not found*/
 div{
     transform-style: preserve-3d;
 }
@@ -334,28 +358,34 @@ svg{
         opacity: 1;
     }
 }
+
+/*tulisan di home tadinya*/
 a{
     color:#F66947;
     text-decoration: none;
-}
+} 
 
 .homepage h2{
-    padding-left: 20px;
+    padding-left: 10px;
     align-items: left;
-    background-color : red;
     float: left;
     text-align: left;
 }
 
 .homepage h3{
-    padding-left: 20px;
+    padding : 0px 0px 20px 0px;
     align-items: left;
-    background-color : red;
     float: left;
     text-align: left;
-    box-sizing: 100px;
+    box-sizing: 20px 10px 10px 20px;
+    margin: 0px 0px 20px 0px;
+    font-size : 20px;
 }
 
 .homepage{
     align-items: left;
+}
+
+.bg-product{
+  background-color: rgba(28, 134, 239, 1);
 }

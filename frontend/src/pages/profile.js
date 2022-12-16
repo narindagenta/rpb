@@ -7,7 +7,8 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
-import { profile } from '.';
+import Navbar from './navbar';
+import './style.css';
 
  
 // Abaikan kode di bawah ini
@@ -48,7 +49,7 @@ const Profile = () => {
         // 2. buat fungsi verifikasi token yang sama seperti di halaman home
         const verifikasi = async()=> {
           try {
-            const response = await axios.post('https://backendnew-rpb-env.up.railway.app/verify', {token : localStorage.getItem('token')})
+            const response = await axios.post('http://localhost:3001/verify', {token : localStorage.getItem('token')})
             console.log(localStorage.getItem('token'))
             if (response.status == 200){
               setIsLogin(true)
@@ -76,17 +77,19 @@ const Profile = () => {
     };
 
     const handleLogout = async () => {
-        // 1. Hapus localStorage
-        localStorage.removeItem('user');
+        // // 1. Hapus localStorage
+        // localStorage.removeItem('user');
 
-        // 2. Hit endpoint logout dengan body jwt yang didapat dari localstorage
-        //   dan setelah berhasil, beri alert sukses
-        await axios.post('https://backendnew-rpb-env.up.railway.app/logout', {
-            jwt: localStorage.getItem('token')
-        })
-        .then((_res) => {
-            alert('Logout Success');
-        })
+        // // 2. Hit endpoint logout dengan body jwt yang didapat dari localstorage
+        // //   dan setelah berhasil, beri alert sukses
+        // await axios.post('http://localhost:3001/logout', {
+        //     jwt: localStorage.getItem('token')
+        // })
+        // .then((_res) => {
+        //     alert('Logout Success');
+        //     window.location.href = '/login';
+            
+        // })
 
         // 3. Redirect ke halaman login, clue : window.location.href = "/"
         window.location.href = '/login';
@@ -94,59 +97,65 @@ const Profile = () => {
 
     if(!isLogin) {
         return (
-            <ThemeProvider theme={theme}>
-                <Container component="main" maxWidth="xs">
-                    <CssBaseline />
-                    <Box
-                        sx={{
-                            marginTop: 8,
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                        }}
-                    >
-                        <Typography component="h1" variant="h5">
-                            Profile
-                        </Typography>
-                        <Box component="form" noValidate sx={{ mt: 1 }}>
-                            <Button
-                                fullWidth
-                                variant="contained"
-                                sx={{ mt: 3, mb: 2 }}
-                                onClick={handleToHome}
-                            >
-                                Back to Home
-                            </Button>
-                        </Box>
-                    </Box>
-                </Container>
-            </ThemeProvider>
+           
+          <Container component="main" maxWidth="xs">
+          <CssBaseline />
+          <Box
+              sx={{
+                  marginTop: 8,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+              }}
+          >
+              <Typography component="h1" variant="h5">
+                  Loading
+              </Typography>
+              <Box component="form" noValidate sx={{ mt: 1 }}>
+                  <Button
+                      fullWidth
+                      variant="contained"
+                      sx={{ mt: 3, mb: 2 }}
+                      onClick={handleToHome}
+                  >
+                      HOME
+                  </Button>
+              </Box>
+          </Box>
+      </Container>
         );
     }
 
     return (
+      <>
+      <Navbar />
       <ThemeProvider theme={theme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
           <Box
             sx={{
-              marginTop: 8,
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
             }}
           >
-            <Box sx={{ m: 1 }} />
+            <Box sx={{ m: 1,
+              marginTop: 20,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',}} />
+            
             <Typography component="h3" variant="h6">
                 Name: {user.name}
             </Typography>
             <Box sx={{ mt: 1 }}>
-              <Typography component="h3" variant="h6" align="center">
+              {/* <Typography component="h3" variant="h6" align="center">
                 ID: {user.id}
-              </Typography>
+              </Typography> */}
               <Typography component="h3" variant="h6" align="center">
                 Email: {user.email}
               </Typography>
+              
               <Button
                 type="button"
                 fullWidth
@@ -169,6 +178,7 @@ const Profile = () => {
           </Box>
         </Container>
       </ThemeProvider>
+      </>
     );
 }
 

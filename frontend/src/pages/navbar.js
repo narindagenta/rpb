@@ -8,23 +8,18 @@ export default function Navbar() {
   return (
     <>
         <header>
-          <div class="homepage">
-            <h1>RPB STORE<br></br></h1>
-            <div class="menu-btn"></div>
-            <div class="navigation">
-                <div class="navigation-items">
-                    <a href="/">Home</a>
-                    <a href="/product">Product</a>
-                    <a href="/order">Order</a>
-                    <a href="/profile">Profile</a>
-                    <a href="/login">Login</a>
-                <div id="buttonregister"class="button">
-                <button type="button">SIGN IN</button>
-                    </div>
-                </div>
+          <a href="./" class="brand">RPB STORE</a>
+          <div class="menu-btn"></div>
+          <div class="navigation">
+            <div class="navigation-items">
+              <a href="/">Home</a>
+              <a href="/product">Product</a>
+              <a href="https://neartail.com/sm/u_eQl4fZI">Order</a>
+              <a href="/profile">Profile</a>
             </div>
           </div>
-          </header>
+
+        </header>
     </>
   );
 }

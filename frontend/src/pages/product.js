@@ -7,7 +7,10 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom';
-import Navbar from './navbar';
+// import Filter from './filter';
+import Cards from './cards';
+import Navbar from "./navbar";
+import './style.css';
 
 
 
@@ -33,7 +36,7 @@ const Product = () => {
         // 2. buat fungsi verifikasi token yang sama seperti di halaman home
         const verifikasi = async()=> {
           try {
-            const response = await axios.post('https://backendnew-rpb-env.up.railway.app/verify', {token : localStorage.getItem('token')})
+            const response = await axios.post('http://localhost:3001/verify', {token : localStorage.getItem('token')})
             console.log(localStorage.getItem('token'))
             if (response.status == 200){
               setIsLogin(true)
@@ -91,7 +94,7 @@ const Product = () => {
                         }}
                     >
                         <Typography component="h1" variant="h5">
-                            Profile
+                            Loading
                         </Typography>
                         <Box component="form" noValidate sx={{ mt: 1 }}>
                             <Button
@@ -100,7 +103,7 @@ const Product = () => {
                                 sx={{ mt: 3, mb: 2 }}
                                 onClick={handleToHome}
                             >
-                                Back to Home
+                                HOME
                             </Button>
                         </Box>
                     </Box>
@@ -110,8 +113,16 @@ const Product = () => {
 
     return (
         <>
+        <div class="product-page">
         <Navbar />
-        <div>
+        {/* <Filter /> */}
+        <div className="container">
+            <div className="row py-5 " >
+            </div>
+        </div>
+        <Cards />
+        <div class="bg-product">
+        </div>
         </div>
         </>
       

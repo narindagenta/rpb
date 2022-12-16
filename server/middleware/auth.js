@@ -3,12 +3,14 @@ SECRET = process.env.SECRET
 
 const Auth = {
   verifyToken(req, res, next){
-      // token = req.cookies["JWT"]
-      const {token} =  req.body
+      token = req.cookies.jwt
+      // const {token} =  req.body
+
       if (token) {
           // 12. Lalukan jwt verify 
         const verified = jwt.verify(token, SECRET)
         req.verified = verified
+
         if(verified){
           console.log("Verifikasi Berhasil!");
           return next();

@@ -102,15 +102,55 @@ const Home = () => {
         <>
         <Navbar />
         <div class="homepage">
-        <h2>Welcome,</h2> <br></br><br></br>
-        <h3>“Disiplin adalah jembatan <br></br>
-            antara cita-cita dan pencapaiannya.</h3>
-        <div id="btnShop"class="button">
-          <button type="button">Shop Now</button>
+        <section class="home">
+              
+            <div class="content active">
+                <h1>Trusted<br/><span>Apparel.</span></h1>
+                <h3>A trusted store for fashion where customers can have confidence in the authenticity and quality of the products, and feel free to contact the store's administration with any questions or concerns.</h3>
+
+                <a id="btnShop" class="button" href="https://neartail.com/sm/u_eQl4fZI">Shop Now</a> <b/><b/>
+                <b/><b/>
+                <a id="btnShop" class="button" href="/product">Explore Now!</a>
+
+            </div>
+                
+            {/* <div class="content">
+                <h1>PDH.<br/><span>pakaian dinas harian</span></h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <a id="btnShop" class="button" href="#">
+                    <button type="button">Shop Now</button>
+                </a>
+            </div>
+                  
+            <div class="content">
+                <h1>PDL.<br/><span>pakaian dinas lapangan</span></h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div id="btnShop"class="button">
+                    <button type="button">Shop Now</button>
+                </div>
+            </div>
+                  
+            <div class="content">
+                <h1>Others.<br/><span>condiment</span></h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div id="btnShop"class="button">
+                    <button type="button">Shop Now</button>
+                </div>
+            </div>
+                   
+            <div class="media-icons">
+                <a href="https://www.facebook.com/stussy/"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/stussy/"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/stussy"><i class="fab fa-twitter"></i></a>
+            </div> */}
+    
+        </section>
         </div>
-        </div>
-        </>
-      );
+
+
+        {/* </div> */}
+    </>
+    );
 }
 
 export default Home;
